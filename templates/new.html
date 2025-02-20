@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white h-screen p-5 shadow-lg">
+            <h1 class="text-xl font-bold">ClarityUI</h1>
+            <button class="w-full bg-purple-600 text-white py-2 mt-4 rounded">Connect New Account</button>
+            <nav class="mt-6">
+                <ul>
+                    <li class="py-2 text-gray-600 hover:text-black">Dashboard</li>
+                    <li class="py-2 text-gray-600 hover:text-black">Performance</li>
+                    <li class="py-2 text-gray-600 hover:text-black">Hotjar</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <header class="flex justify-between">
+                <h2 class="text-lg font-semibold">Hey Mariana - here’s what’s happening with your store today</h2>
+            </header>
+            
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-4 gap-4 mt-6">
+                <div class="bg-white p-4 rounded shadow-md">
+                    <h3 class="text-gray-600">Today's Sale</h3>
+                    <p class="text-xl font-bold">$12,426</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow-md">
+                    <h3 class="text-gray-600">Total Sales</h3>
+                    <p class="text-xl font-bold">$2,38,485</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow-md">
+                    <h3 class="text-gray-600">Total Orders</h3>
+                    <p class="text-xl font-bold">84,382</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow-md">
+                    <h3 class="text-gray-600">Total Customers</h3>
+                    <p class="text-xl font-bold">33,493</p>
+                </div>
+            </div>
+
+            <!-- Sales Report -->
+            <div class="bg-white p-4 mt-6 rounded shadow-md">
+                <h3 class="text-gray-600">Sales Report</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <!-- Transactions -->
+            <div class="bg-white p-4 mt-6 rounded shadow-md">
+                <h3 class="text-gray-600">Transactions</h3>
+                <ul>
+                    <li class="py-2">Visa card ****4831 - $182.94 - Amazon</li>
+                    <li class="py-2">Mastercard ****6442 - $99.00 - Facebook</li>
+                    <li class="py-2">Account ****882 - $249.94 - Netflix</li>
+                    <li class="py-2">Amex card ****5666 - $199.24 - Amazon Prime</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
