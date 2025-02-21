@@ -141,7 +141,9 @@
     
     <script>
     // Chart Configurations
-    var MobileVerifyUsers = {{ MobileVerifyUsers | tojson }};
+    var ugcount =;
+    var pgcount = {{ pgcount | tojson }};
+
     const chartConfigs = [
         {
             id: 'platformDistributionChart',
@@ -150,7 +152,7 @@
                 labels: ['Mobile Users', 'Web Users'],
                 datasets: [{
                     label: 'Platform Distribution',
-                    data: [9000, MobileVerifyUsers | tojson],
+                    data: [{{ MobileUsers | tojson }}, {{ DesktopUsers | tojson }}],
                     backgroundColor: ['#36A2EB', '#FF6384'],
                 }]
             },
@@ -162,7 +164,7 @@
                 labels: ['Verified', 'Unverified'],
                 datasets: [{
                     label: 'Verification Status',
-                    data: [13000, 2000],
+                    data: [{{ MobileVerifyUsers | tojson }}, {{ Desktopverifyusers | tojson }}],
                     backgroundColor: ['#4BC0C0', '#FF9F40'],
                 }]
             },
@@ -171,11 +173,11 @@
             id: 'educationLevelDistributionChart',
             type: 'doughnut',
             data: {
-                labels: ['High School', 'Bachelor\'s', 'Master\'s', 'PhD'],
+                labels: ['Bachelor\'s', 'Master\'s'],
                 datasets: [{
                     label: 'Education Level',
-                    data: [5000, 6000, 3000, 1000],
-                    backgroundColor: ['#FFCE56', '#36A2EB', '#FF6384', '#4BC0C0'],
+                    data: [ {{ ugcount | tojson }},  {{ pgcount | tojson }}],
+                    backgroundColor: ['#FFCE56', '#36A2EB'],
                 }]
             },
         },
